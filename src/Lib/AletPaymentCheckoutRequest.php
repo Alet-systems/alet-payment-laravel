@@ -6,7 +6,6 @@ use JsonSerializable;
 
 class AletPaymentCheckoutRequest implements JsonSerializable
 {
-    
     public $subject;
     public $amount;
     public $mobile;
@@ -20,39 +19,39 @@ class AletPaymentCheckoutRequest implements JsonSerializable
     public $callbackUrl;
 
     public function __construct(
-        $cancel_url,
-        $nonce,
-        $error_url,
-        $notify_url,
-        $success_url,
-        $paymentMethods,
-        $expireDate,
-        $items,
-        $beneficiaries
+        $subject,
+        $amount,
+        $mobile,
+        $tx,
+        $h5id,
+        $payload,
+        $apikey,
+        $returnUrl,
+        $callbackUrl
     ) {
-        $this->cancel_url = $cancel_url;
-        $this->nonce = $nonce;
-        $this->error_url = $error_url;
-        $this->notify_url = $notify_url;
-        $this->success_url = $success_url;
-        $this->paymentMethods = $paymentMethods;
-        $this->expireDate = $expireDate;
-        $this->items = $items;
-        $this->beneficiaries = $beneficiaries;
+        $this->subject = $subject;
+        $this->amount = $amount;
+        $this->mobile = $mobile;
+        $this->tx = $tx;
+        $this->h5id = $h5id;
+        $this->payload = $payload;
+        $this->apikey = $apikey;
+        $this->returnUrl = $returnUrl;
+        $this->callbackUrl = $callbackUrl;
     }
 
     public function jsonSerialize()
     {
         return [
-            'cancelUrl' => $this->cancel_url,
-            'nonce' => $this->nonce,
-            'errorUrl' => $this->error_url,
-            'notifyUrl' => $this->notify_url,
-            'successUrl' => $this->success_url,
-            'paymentMethods' => $this->paymentMethods,
-            'expireDate' => $this->expireDate,
-            'items' => $this->items,
-            'beneficiaries' => $this->beneficiaries,
+            'subject' => $this->subject,
+            'amount' => $this->amount,
+            'mobile' => $this->mobile,
+            'tx' => $this->tx,
+            'h5id' => $this->h5id,
+            'payload' => $this->payload,
+            'apikey' => $this->apikey,
+            'returnUrl' => $this->returnUrl,
+            'callbackUrl' => $this->callbackUrl,
         ];
     }
 }

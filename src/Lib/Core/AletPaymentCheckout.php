@@ -28,7 +28,7 @@ class AletPaymentCheckout
         $this->http_client = $http_client;
     }
 
-    public function create(AletPaymentCheckoutRequest $arifpayCheckoutRequest, AletPaymentOptions $option = null): AletPaymentCheckoutResponse
+    public function create(AletPaymentCheckoutRequest $aletpaymentCheckoutRequest, AletPaymentOptions $option = null): AletPaymentCheckoutResponse
     {
         if ($option == null) {
             $option = new AletPaymentOptions(false);
@@ -37,7 +37,7 @@ class AletPaymentCheckout
         try {
            
             $response = $this->http_client->post(AletPayment::API_VERSION."/telebirr/pay/web", [
-                RequestOptions::JSON => $arifpayCheckoutRequest->jsonSerialize(),
+                RequestOptions::JSON => $aletpaymentCheckoutRequest->jsonSerialize(),
             ]);
 
             $arifAPIResponse = AletPaymentAPIResponse::fromJson(json_decode($response->getBody(), true));
