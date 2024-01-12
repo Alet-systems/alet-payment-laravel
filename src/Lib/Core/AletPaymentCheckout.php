@@ -35,8 +35,8 @@ class AletPaymentCheckout
         }
 
         try {
-           
-            $response = $this->http_client->post(AletPayment::API_VERSION."/telebirr/pay/web", [
+            $request_url = $aletpaymentCheckoutRequest->mobile ? AletPayment::API_VERSION . "/telebirr/pay/app" : AletPayment::API_VERSION . "/telebirr/pay/web";
+            $response = $this->http_client->post(AletPayment::API_VERSION . "/telebirr/pay/web", [
                 RequestOptions::JSON => $aletpaymentCheckoutRequest->jsonSerialize(),
             ]);
 
@@ -60,7 +60,7 @@ class AletPaymentCheckout
 
         try {
             $basePath = $option->sandbox ? '/sandbox' : '';
-            $response = $this->http_client->get(AletPayment::API_VERSION."$basePath/checkout/session/$session_iD");
+            $response = $this->http_client->get(AletPayment::API_VERSION . "$basePath/checkout/session/$session_iD");
 
             $arifAPIResponse = AletPaymentAPIResponse::fromJson(json_decode($response->getBody(), true));
 
@@ -82,7 +82,7 @@ class AletPaymentCheckout
 
         try {
             $basePath = $option->sandbox ? '/sandbox' : '';
-            $response = $this->http_client->post(AletPayment::API_VERSION."$basePath/checkout/session/cancel/$session_iD");
+            $response = $this->http_client->post(AletPayment::API_VERSION . "$basePath/checkout/session/cancel/$session_iD");
 
             $arifAPIResponse = AletPaymentAPIResponse::fromJson(json_decode($response->getBody(), true));
 
