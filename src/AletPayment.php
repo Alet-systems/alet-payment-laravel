@@ -11,7 +11,7 @@ class AletPayment
     public $http_client;
     public $apikey;
 
-    public $DEFAULT_HOST = 'http://198.199.80.48:1270';
+    public $DEFAULT_HOST = 'http://198.199.80.48:8084';
     public const API_VERSION = '/api';
     public static $PACKAGE_VERSION = '1.0.0';
     public $DEFAULT_TIMEOUT = 1000 * 60 * 2;
