@@ -35,7 +35,7 @@ class AletPaymentCheckout
         }
 
         try {
-            $request_url = $aletpaymentCheckoutRequest->mobile ? AletPayment::API_VERSION . "/telebirr/pay/app" : AletPayment::API_VERSION . "/telebirr/pay/web";
+            $request_url = $option->mobile ? AletPayment::API_VERSION . "/telebirr/pay/app" : AletPayment::API_VERSION . "/telebirr/pay/web";
             $response = $this->http_client->post($request_url, [
                 RequestOptions::JSON => $aletpaymentCheckoutRequest->jsonSerialize(),
             ]);
