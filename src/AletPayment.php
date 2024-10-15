@@ -11,7 +11,7 @@ class AletPayment
     public $http_client;
     public $apikey;
 
-    public $DEFAULT_HOST = 'http://198.199.80.48:8084';
+    public $DEFAULT_HOST = 'http://178.62.106.110:8084';
     public const API_VERSION = '/api';
     public static $PACKAGE_VERSION = '1.0.0';
     public $DEFAULT_TIMEOUT = 1000 * 60 * 2;
@@ -27,7 +27,6 @@ class AletPayment
                 "Accepts" => "application/json",
             ],
         ]);
-        $this->checkout = new AletPaymentCheckout($this->http_client);
         $this->directPay = new AletPaymentDirectPay($this->http_client);
     }
 }

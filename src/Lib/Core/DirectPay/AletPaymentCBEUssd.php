@@ -14,7 +14,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\RequestOptions;
 use League\Flysystem\ConnectionErrorException;
 
-class AletPaymentTelebirr
+class AletPaymentCBEUssd
 {
     public $http_client;
 
@@ -26,7 +26,7 @@ class AletPaymentTelebirr
     public function pay(AletPaymentCheckoutRequest $aletpaymentCheckoutRequest, AletPaymentOptions $option = null)
     {
         try {
-            $request_url = $option->mobile ? AletPayment::API_VERSION . "/telebirr/pay/app" : AletPayment::API_VERSION . "/telebirr/pay/web";
+            $request_url = AletPayment::API_VERSION . "/cbe/pay";
             $response = $this->http_client->post($request_url, [
                 RequestOptions::JSON => $aletpaymentCheckoutRequest->jsonSerialize(),
             ]);

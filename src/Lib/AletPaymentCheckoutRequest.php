@@ -2,9 +2,8 @@
 
 namespace AletPayment\AletPayment\Lib;
 
-use JsonSerializable;
 
-class AletPaymentCheckoutRequest implements JsonSerializable
+class AletPaymentCheckoutRequest
 {
     public $subject;
     public $amount;
@@ -23,7 +22,7 @@ class AletPaymentCheckoutRequest implements JsonSerializable
         $amount,
         $mobile,
         $tx,
-        $h5id,
+        $infoId,
         $payload,
         $apikey,
         $returnUrl,
@@ -33,7 +32,7 @@ class AletPaymentCheckoutRequest implements JsonSerializable
         $this->amount = $amount;
         $this->mobile = $mobile;
         $this->tx = $tx;
-        $this->h5id = $h5id;
+        $this->infoId = $infoId;
         $this->payload = $payload;
         $this->apikey = $apikey;
         $this->returnUrl = $returnUrl;
@@ -47,7 +46,7 @@ class AletPaymentCheckoutRequest implements JsonSerializable
             'amount' => $this->amount,
             'mobile' => $this->mobile,
             'tx' => $this->tx,
-            'h5id' => $this->h5id,
+            'infoId' => $this->infoId,
             'payload' => $this->payload,
             'apikey' => $this->apikey,
             'returnUrl' => $this->returnUrl,
