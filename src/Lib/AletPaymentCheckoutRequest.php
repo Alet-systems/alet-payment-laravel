@@ -10,7 +10,7 @@ class AletPaymentCheckoutRequest
     public $mobile;
 
     public $tx;
-    public $h5id;
+    public $infoId;
     public $payload;
 
     public $apikey;
