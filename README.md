@@ -18,7 +18,7 @@ See the [`Developer` API docs](https://developer.alet-systems.net/).
 You can install the package via composer:
 
 ```bash
-composer require alet-systems/alet-systems
+composer require alet-systems/alet-payment
 ```
 
 ## For Laravel version <= 5.4
