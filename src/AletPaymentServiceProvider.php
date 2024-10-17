@@ -16,10 +16,7 @@ class AletPaymentServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('arifpay')
+            ->name('aletpayment')
             ->hasConfigFile();
-        /* ->hasMigration('create_arifpay_table')
-        ->hasRoute('api')
-        ->hasCommand(AletPaymentCommand::class); */
     }
 }

@@ -17,7 +17,6 @@ class AletPaymentDirectPay
 
     public $telebirr;
     public $cbeUssd;
-    public $awash_wallet;
 
     public function __construct($http_client)
     {
